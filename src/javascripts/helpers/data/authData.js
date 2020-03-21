@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import pasture from '../../components/pasture/pasture';
 
 const authDiv = $('#auth');
 const pastureDiv = $('#pasture');
@@ -11,6 +12,7 @@ const checkLoginStatus = () => {
       authDiv.addClass('hide');
       pastureDiv.removeClass('hide');
       logoutButton.removeClass('hide');
+      pasture.buildCows();
     } else {
       authDiv.removeClass('hide');
       pastureDiv.addClass('hide');

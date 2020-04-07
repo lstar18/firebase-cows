@@ -8,6 +8,7 @@ const pastureDiv = $('#pasture');
 const logoutButton = $('#navbar-logout-button');
 const farmhouseDiv = $('#farmhouse');
 const singleFarmerDiv = $('#single-farmer');
+const newCowDiv = $('#new-cow');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -17,6 +18,7 @@ const checkLoginStatus = () => {
       farmhouseDiv.removeClass('hide');
       logoutButton.removeClass('hide');
       singleFarmerDiv.removeClass('hide');
+      newCowDiv.removeClass('hide');
       pasture.buildCows();
       farmHouse.buildFarmers();
     } else {
@@ -25,6 +27,7 @@ const checkLoginStatus = () => {
       logoutButton.addClass('hide');
       farmhouseDiv.addClass('hide');
       singleFarmerDiv.addClass('hide');
+      newCowDiv.addClass('hide');
     }
   });
 };
